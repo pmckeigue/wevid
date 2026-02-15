@@ -76,12 +76,12 @@ plotWdists <- function(Wdensities.unadj, Wdensities.adj, mask=NULL,
     }
 
     expand <- c(0.005, 0.005)
-    p <- ggplot(dists.long, aes(x=tobits(dists.long$W), y=value,
+    p <- ggplot(dists.long, aes(x=tobits(W), y=value,
                                 linetype=adjusted, colour=status)) +
-        geom_line(size=1.25) +
+        geom_line(linewidth=1.25) +
         scale_linetype_manual(values=c("dotted", "solid")) +
         scale_color_manual(values=c(Controls='#000000', Cases='#FF0000')) +
-        scale_x_continuous(limits=c(min(dists.long$W), max(dists.long$W))) +
+        scale_x_continuous(limits=tobits(c(min(dists.long$W), max(dists.long$W)))) +
         theme_grey(base_size=20) +
         xlab("Weight of evidence case/control (bits)") +
         ylab("Probability density") +
@@ -125,9 +125,9 @@ plotcumfreqs <- function(densities) {
     breaks <- seq(0, 1, by=0.1)
     expand <- c(0.005, 0.005)
     p <- ggplot(cumfreqs, aes(x=tobits(W), y=F, colour=status)) +
-        geom_line(size=1.25) +
+        geom_line(linewidth=1.25) +
         scale_color_manual(values=c(Controls='#000000', Cases='#FF0000')) +
-        scale_x_continuous(limits=2 * c(min(W), max(W)), expand=expand) +
+        scale_x_continuous(limits=2 * c(min(cumfreqs$W), max(cumfreqs$W)), expand=expand) +
         scale_y_continuous(limits=c(0, 1), breaks=breaks, expand=expand) +
         theme_grey(base_size=20) +
         xlab("Weight of evidence case/control (bits)") +
@@ -177,7 +177,7 @@ plotroc <- function(densities, y, W) {
     breaks <- seq(0, 1, by=0.1)
     expand <- c(0.005, 0.005)
     p <- ggplot(roc, aes(x=x, y=y, colour=calc)) +
-        geom_line(size=1.25) + coord_fixed() +
+        geom_line(linewidth=1.25) + coord_fixed() +
         scale_x_continuous(limits=c(0, 1), breaks=breaks, expand=expand) +
         scale_y_continuous(limits=c(0, 1), breaks=breaks, expand=expand) +
         theme_grey(base_size=20) +
@@ -214,8 +214,8 @@ plotW <- function(densities, W) {
     wratios <- data.frame(
         Wdens=densities$x, Wratio=densities.logratio)
     axislimits <- 1.5 * c(min(W), max(W))
-    p <- ggplot(wratios, aes(x=Wdens, y=densities.logratio)) +
-        geom_line(size=1.25) + coord_fixed() +
+    p <- ggplot(wratios, aes(x=Wdens, y=Wratio)) +
+        geom_line(linewidth=1.25) + coord_fixed() +
         scale_x_continuous(limits=axislimits, expand=c(0, 0)) +
         scale_y_continuous(limits=axislimits, expand=c(0, 0)) +
         theme_grey(base_size=20) +

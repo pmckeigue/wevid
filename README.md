@@ -40,20 +40,46 @@ densities.adj <- Wdensities.fromraw(densities.unadj)
 
 # Plot distributions of W in cases and controls
 plotWdists(densities.unadj, densities.adj)
+```
 
+![plotWdists](man/figures/plotWdists.png)
+
+```r
 # Plot cumulative frequency distributions
 plotcumfreqs(densities.adj)
+```
 
+![plotcumfreqs](man/figures/plotcumfreqs.png)
+
+```r
 # Plot crude and model-based ROC curves
 plotroc(densities.adj, cleveland$y, W)
+```
 
+![plotroc](man/figures/plotroc.png)
+
+```r
+# Diagnostic plot: log density ratio vs weight of evidence
+plotW(densities.adj, W)
+```
+
+![plotW](man/figures/plotW.png)
+
+```r
 # Compute model-based AUROC and expected information for discrimination
 auroc.model(densities.adj)
+#> [1] 0.9153484
+
 lambda.model(densities.adj)
+#> [1] 2.653516
 
 # Summary results table
 with(cleveland, wtrue.results("cleveland", y, posterior.p, prior.p))
 ```
+
+| Model | Cases / controls | Test log-likelihood (bits) | Crude C-statistic | Crude Lambda (bits) |
+|---|---|---|---|---|
+| cleveland | 137 / 160 | -171.94 | 0.895 | 2.47 |
 
 ## Key Functions
 

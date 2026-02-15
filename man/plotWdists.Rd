@@ -4,8 +4,12 @@
 \alias{plotWdists}
 \title{Plot the distribution of the weight of evidence in cases and in controls}
 \usage{
-plotWdists(Wdensities.unadj, Wdensities.adj, mask = NULL,
-  distlabels = c("Crude", "Adjusted"))
+plotWdists(
+  Wdensities.unadj,
+  Wdensities.adj,
+  mask = NULL,
+  distlabels = c("Crude", "Adjusted")
+)
 }
 \arguments{
 \item{Wdensities.unadj}{Unadjusted densities computed by

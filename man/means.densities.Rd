@@ -17,5 +17,5 @@ numeric vector of length 2: mean densities in controls and in cases.
 Means of densities in cases and controls
 }
 \seealso{
-: lambda.model
+\code{\link{lambda.model}}
 }

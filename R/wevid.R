@@ -51,4 +51,9 @@
 #' 
 #' @docType package
 #' @import ggplot2
+#' @importFrom stats bw.SJ density dnorm optim
 "_PACKAGE"
+
+## Suppress R CMD check NOTEs for ggplot2 non-standard evaluation bindings
+utils::globalVariables(c("W", "Wdens", "Wratio", "adjusted", "calc",
+                         "status", "value", "x"))

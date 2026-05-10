@@ -241,14 +241,14 @@ Wdensities.mix <- function(y, W, in.spike, range.xseq=c(-25, 25), x.stepsize=0.0
     if (n.ctrls + n.cases != length(y))
         stop("y contains values different from 0 or 1")
 
-    Wdensity.mix.ctrls <- density.spike.slab(W[y==0], in.spike[y==0], xseq)
-    Wdensity.mix.cases <- density.spike.slab(W[y==1], in.spike[y==1], xseq)
+    Wdensity.mix.ctrls <- wevid_density_spike_slab(W[y==0], in.spike[y==0], xseq)
+    Wdensity.mix.cases <- wevid_density_spike_slab(W[y==1], in.spike[y==1], xseq)
     return(list(x=xseq, f.ctrls=Wdensity.mix.ctrls$y, f.cases=Wdensity.mix.cases$y,
                 n.ctrls=n.ctrls, n.cases=n.cases, x.stepsize=x.stepsize))
 }
 
 #' @keywords internal
-density.spike.slab <- function(W, in.spike, xseq) {
+wevid_density_spike_slab <- function(W, in.spike, xseq) {
     density.spike <- density(W[in.spike], bw="SJ", n=length(xseq),
                              from=min(xseq), to=max(xseq))
     density.slab <- density(W[!in.spike], bw="SJ", n=length(xseq),

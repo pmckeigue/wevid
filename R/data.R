@@ -6,5 +6,5 @@
 #'   \item{posterior.p}{posterior probabilites of case status}
 #'   \item{y}{case-control status}
 #' }
-#' @source \url{http://www.homepages.ed.ac.uk/pmckeigu/preprints/classify/demoplotw.html}
+#' @source \url{https://precmed.cphs.mvm.ed.ac.uk/pmckeigue/preprints/classify/demoplotw.html}
 "cleveland"

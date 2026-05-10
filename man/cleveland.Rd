@@ -13,7 +13,7 @@ A data frame with 297 rows and three variables
 }
 }
 \source{
-\url{http://www.homepages.ed.ac.uk/pmckeigu/preprints/classify/demoplotw.html}
+\url{https://precmed.cphs.mvm.ed.ac.uk/pmckeigue/preprints/classify/demoplotw.html}
 }
 \usage{
 cleveland

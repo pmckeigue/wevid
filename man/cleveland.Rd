@@ -12,9 +12,6 @@ A data frame with 297 rows and three variables
   \item{y}{case-control status}
 }
 }
-\source{
-\url{https://precmed.cphs.mvm.ed.ac.uk/pmckeigue/preprints/classify/demoplotw.html}
-}
 \usage{
 cleveland
 }

@@ -23,13 +23,6 @@ to predict on the test data)
 
 3. The observed case status (coded as 0=noncase, 1=case).
 }
-\seealso{
-Useful links:
-\itemize{
-  \item \url{https://precmed.cphs.mvm.ed.ac.uk/pmckeigue/preprints/classify/demoplotw.html}
-}
-
-}
 \author{
 Paul McKeigue \email{paul.mckeigue@ed.ac.uk}
 
